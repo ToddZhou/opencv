@@ -25,6 +25,7 @@
 		7906A8851B8DB87400475C5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7906A8841B8DB87400475C5E /* Foundation.framework */; };
 		7906A8871B8DB8E600475C5E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7906A8861B8DB8E600475C5E /* CoreData.framework */; };
 		7906A8891B8DBD5800475C5E /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7906A8881B8DBD5800475C5E /* libstdc++.dylib */; };
+		791F47531BAA90B6006F0B58 /* card.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 791F47521BAA90B6006F0B58 /* card.JPG */; };
 		79EF59971B8EF221003449D4 /* VideoSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EF59961B8EF221003449D4 /* VideoSource.m */; };
 		79EFA0201BA7EDDA00A53503 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79EFA01F1BA7EDDA00A53503 /* opencv2.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		7906A8861B8DB8E600475C5E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7906A8881B8DBD5800475C5E /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		7906A88A1B8DBFCE00475C5E /* OpencvPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OpencvPrefix.pch; path = ../OpencvPrefix.pch; sourceTree = "<group>"; };
+		791F47521BAA90B6006F0B58 /* card.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card.JPG; sourceTree = "<group>"; };
 		79EF59951B8EF221003449D4 /* VideoSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoSource.h; sourceTree = "<group>"; };
 		79EF59961B8EF221003449D4 /* VideoSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoSource.m; sourceTree = "<group>"; };
 		79EFA01F1BA7EDDA00A53503 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../opencv2.framework; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				7906A87D1B8DB2C800475C5E /* UIImage+OpenCV.mm */,
 				79EF59951B8EF221003449D4 /* VideoSource.h */,
 				79EF59961B8EF221003449D4 /* VideoSource.m */,
+				791F47521BAA90B6006F0B58 /* card.JPG */,
 			);
 			path = Opencv;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7906A8421B8C4F7800475C5E /* Main.storyboard in Resources */,
+				791F47531BAA90B6006F0B58 /* card.JPG in Resources */,
 				7906A8471B8C4F7800475C5E /* LaunchScreen.xib in Resources */,
 				7906A8441B8C4F7800475C5E /* Images.xcassets in Resources */,
 			);

@@ -26,6 +26,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self.imagePicker addTarget:self action:@selector(openPicker:) forControlEvents:UIControlEventTouchUpInside];
     
+    _cardView.image = [UIImage imageNamed:@"card.JPG"];
+
 //    VideoSource *source = [[VideoSource alloc] init];
 //    if([source startWithDevicePosition:AVCaptureDevicePositionFront])
 //    {
@@ -60,13 +62,6 @@
     
     if (image) {
         _cardView.image = image;
-        
-//        [self progressImage];
-        
-        [self processSkin];
-        
-        //抠图
-//        [self processHead];
     }
     
     [picker dismissViewControllerAnimated:YES completion:nil];
@@ -111,38 +106,6 @@
     
     _cardView.image = [UIImage convertToUIImage:processed];
     
-}
-
-- (void)progressImage
-{
-    UIImage* image = self.cardView.image;
-    // Convert UIImage* to cv::Mat
-    cv::Mat cvImage;
-    UIImageToMat(image, cvImage,false);
-
-    if (!cvImage.empty()) {
-        //灰度图
-        cv::Mat result;
-        result = [self RBG2GRAY:cvImage];
-        NSLog(@"percent 30");
-        
-        cv::Mat gau;
-        gau = [self Gaussian:result];
-        
-//        cv::Mat result1;
-//        result1 = [self Threshold:gau];
-//        NSLog(@"percent 50");
-//        
-//        [self FindContours:result1];
-        
-        NSLog(@"percent 100");
-        
-//        cv::Mat result2;
-//        result2 = [self Canny:result1];
-
-        self.cardView.image = MatToUIImage(gau);
-        
-    }
 }
 
 //灰度图
@@ -301,6 +264,42 @@
         }
     }
     cvCopy(imageCb,imgProcessed,NULL);
+}
+
+#pragma mark - action
+- (IBAction)grayAction:(id)sender {
+
+    UIImage* image = self.cardView.image;
+    cv::Mat cvImage;
+    UIImageToMat(image, cvImage,false);
+    if (cvImage.empty()) {
+        return;
+    }
+    
+    cv::Mat result;
+    result = [self RBG2GRAY:cvImage];
+
+    self.cardView.image = MatToUIImage(result);
+    
+    cvImage = NULL;
+    result = NULL;
+}
+
+- (IBAction)twoValue:(id)sender {
+    UIImage* image = self.cardView.image;
+    cv::Mat cvImage;
+    UIImageToMat(image, cvImage,false);
+    if (cvImage.empty()) {
+        return;
+    }
+    
+    cv::Mat result;
+    result = [self Threshold:cvImage];
+    
+    self.cardView.image = MatToUIImage(result);
+    
+    cvImage = NULL;
+    result = NULL;
 }
 
 - (void)didReceiveMemoryWarning {
