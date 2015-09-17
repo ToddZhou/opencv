@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -56,19 +57,60 @@
                                     <action selector="twoValue:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lc3-lb-MIl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yw8-6g-XRM">
+                                <rect key="frame" x="140" y="550" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Z59-Dl-tND"/>
+                                    <constraint firstAttribute="width" constant="30" id="zVv-Kb-Bo7"/>
+                                </constraints>
+                                <state key="normal" title="轮廓">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Contours:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dPQ-Vm-NYJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0k-kR-0gO">
+                                <rect key="frame" x="183" y="550" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hqg-LY-D6M"/>
+                                    <constraint firstAttribute="width" constant="30" id="lOf-Kf-yet"/>
+                                </constraints>
+                                <state key="normal" title="滤波"/>
+                                <connections>
+                                    <action selector="gas:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yeU-Yk-cRY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aa3-Cz-753">
+                                <rect key="frame" x="550" y="28" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mxB-na-dfI"/>
+                                    <constraint firstAttribute="width" constant="30" id="pcA-2W-gdX"/>
+                                </constraints>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="save:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ush-U6-Xuv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="79L-Af-3Tx" firstAttribute="leading" secondItem="Nr8-tb-hwV" secondAttribute="trailing" constant="10" id="9Bt-eW-tmg"/>
+                            <constraint firstAttribute="bottom" secondItem="e0k-kR-0gO" secondAttribute="bottom" constant="20" id="CWR-Dt-BG4"/>
                             <constraint firstAttribute="bottom" secondItem="Pl1-bQ-Q8m" secondAttribute="bottom" constant="20" id="FkB-YZ-Vmr"/>
+                            <constraint firstItem="Yw8-6g-XRM" firstAttribute="leading" secondItem="79L-Af-3Tx" secondAttribute="trailing" constant="10" id="HZf-kq-w4f"/>
                             <constraint firstAttribute="bottom" secondItem="kMK-vx-lec" secondAttribute="bottom" id="IGv-lj-BUg"/>
                             <constraint firstAttribute="bottom" secondItem="79L-Af-3Tx" secondAttribute="bottom" constant="20" id="PYX-Ne-Tmw"/>
+                            <constraint firstAttribute="bottom" secondItem="Yw8-6g-XRM" secondAttribute="bottom" constant="20" id="Qdz-Q8-DuQ"/>
                             <constraint firstItem="Nr8-tb-hwV" firstAttribute="leading" secondItem="Pl1-bQ-Q8m" secondAttribute="trailing" constant="10" id="VZi-Z4-1rd"/>
                             <constraint firstAttribute="trailing" secondItem="kMK-vx-lec" secondAttribute="trailing" constant="20" id="Ze1-c2-jm1"/>
+                            <constraint firstItem="aa3-Cz-753" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" constant="20" id="dws-hU-Ltz"/>
                             <constraint firstItem="kMK-vx-lec" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="ebk-hE-ZKF"/>
+                            <constraint firstItem="e0k-kR-0gO" firstAttribute="width" secondItem="Yw8-6g-XRM" secondAttribute="width" id="eoV-Qr-SI6"/>
                             <constraint firstItem="Pl1-bQ-Q8m" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="gn3-Wg-dlf"/>
                             <constraint firstAttribute="bottom" secondItem="Nr8-tb-hwV" secondAttribute="bottom" constant="20" id="hXh-Tq-hXk"/>
                             <constraint firstItem="kMK-vx-lec" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="hgU-kv-KsT"/>
+                            <constraint firstItem="aa3-Cz-753" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="20" id="uRh-zX-vfC"/>
                         </constraints>
                     </view>
                     <connections>

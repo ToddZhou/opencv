@@ -301,6 +301,56 @@
     cvImage = NULL;
     result = NULL;
 }
+- (IBAction)Contours:(id)sender {
+    UIImage* image = self.cardView.image;
+    cv::Mat cvImage;
+    UIImageToMat(image, cvImage,false);
+    if (cvImage.empty()) {
+        return;
+    }
+
+    [self FindContours:cvImage];
+    
+    self.cardView.image = MatToUIImage(cvImage);
+    
+    cvImage = NULL;
+}
+- (IBAction)gas:(id)sender {
+    UIImage* image = self.cardView.image;
+    cv::Mat cvImage;
+    UIImageToMat(image, cvImage,false);
+    if (cvImage.empty()) {
+        return;
+    }
+    
+    [self Gaussian:cvImage];
+    
+    self.cardView.image = MatToUIImage(cvImage);
+    
+    cvImage = NULL;
+}
+- (IBAction)save:(id)sender {
+    UIImageWriteToSavedPhotosAlbum(_cardView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+}
+
+// 功能：显示图片保存结果
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo
+{
+    if (!error){
+        
+        [self showAlert:NSLocalizedString(@"保存成功", nil)];
+    }else {
+        [self showAlert:NSLocalizedString(@"保存失败", nil)];
+    }
+}
+
+- (void) showAlert: (NSString *) message
+{
+    if (message != nil) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [av show];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
