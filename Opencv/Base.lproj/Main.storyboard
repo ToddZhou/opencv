@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kMK-vx-lec">
+                                <rect key="frame" x="-95" y="-19" width="600" height="357"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pl1-bQ-Q8m">
+                                <rect key="frame" x="225" y="550" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2n7-j9-LiD"/>
+                                    <constraint firstAttribute="width" constant="30" id="acO-gc-kji"/>
+                                </constraints>
+                                <state key="normal" title="相册">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Pl1-bQ-Q8m" secondAttribute="bottom" constant="20" id="FkB-YZ-Vmr"/>
+                            <constraint firstAttribute="bottom" secondItem="kMK-vx-lec" secondAttribute="bottom" constant="20" id="IGv-lj-BUg"/>
+                            <constraint firstAttribute="trailing" secondItem="kMK-vx-lec" secondAttribute="trailing" constant="20" id="Ze1-c2-jm1"/>
+                            <constraint firstItem="kMK-vx-lec" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" id="ebk-hE-ZKF"/>
+                            <constraint firstItem="kMK-vx-lec" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="hgU-kv-KsT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cardView" destination="kMK-vx-lec" id="2sK-xJ-BBG"/>
+                        <outlet property="imagePicker" destination="Pl1-bQ-Q8m" id="jPh-UN-AJs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
